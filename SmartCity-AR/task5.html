@@ -7,7 +7,8 @@
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
             <a-assets>
-                <audio id="helmet_sound" src="assets/get-you-the-moon.mp3" response-type="arraybuffer" autoplay="true" loop></audio>
+                <!-- <audio id="helmet_sound" src="assets/get-you-the-moon.mp3" response-type="arraybuffer" autoplay="true" loop></audio> -->
+                <video id="helmet_video" src="assets/get-you-the-moon.mp4"></video>
                 <a-asset-item id="helmet" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/KhronosGroup/glTF-Sample-Models/master/2.0/SciFiHelmet/glTF/SciFiHelmet.gltf"></a-asset-item>
             </a-assets>
 
@@ -24,18 +25,12 @@
                 </a-entity>
 
                 <!-- second entity: reference to the above audio -->
-                <a-entity sound="src: #helmet_sound; volume: 10; loop: true">
+                <a-entity geometry="primitive: plane" material="src: #helmet_video"></a-entity>
                 </a-entity>
             </a-marker>
 
             <!-- add a camera to the scene that renders the objects for us -->
             <a-entity camera></a-entity>
         </a-scene>
-        
-        <audio controls autoplay>
-            <!-- <source src="horse.ogg" type="audio/ogg"> -->
-            <source src="assets/get-you-the-moon.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio> 
     </body>
 </html>
